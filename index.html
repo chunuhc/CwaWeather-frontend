@@ -91,10 +91,27 @@
         border: 4px solid var(--ac-card-border);
         margin-bottom: 25px;
         position: relative;
-        background-image: url("https://images.unsplash.com/photo-1592194996308-7b43878e84a6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NzN8MHwxfHJhbmRvbXx8fGNhdH8xfHx8fDE2OTcyODExNjM&ixlib=rb-4.0.3&q=80&w=600");
-        background-size: contain;
+        background-color: #ffc996;
+        /* background-image: url("https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?q=80&w=2643&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+        background-size: 132%;
         background-repeat: no-repeat;
-        background-position: bottom right;
+        background-position: top center; */
+        position: relative;
+        z-index: 1;
+      }
+      .hero-card::before {
+        content: "";
+        position: absolute;
+        border-radius: 35px;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: url("https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?q=80&w=2643&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+        background-size: 132%;
+        opacity: 0.5; /* Adjust as needed */
+        z-index: -1; /* Ensures the pseudo-element is behind the content */
+        filter: sepia(1) opacity(0.2);
       }
 
       .hero-period {
@@ -426,7 +443,7 @@
           }
         } catch (e) {
           console.error(e);
-          alert("天氣資料讀取失敗，狸克把網路線咬斷了！");
+          alert("天氣資料讀取失敗，小吉把網路線咬斷了！");
         }
       }
 
